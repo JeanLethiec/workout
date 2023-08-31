@@ -8,6 +8,9 @@ import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * https://leetcode.com/problems/valid-anagram/
+ */
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
         HashMap<Character, Integer> count = new HashMap<>();
