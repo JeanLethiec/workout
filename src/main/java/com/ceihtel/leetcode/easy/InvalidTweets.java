@@ -1,4 +1,4 @@
-package com.ceihtel.leetcode;
+package com.ceihtel.leetcode.easy;
 
 /**
  * https://leetcode.com/problems/invalid-tweets/

@@ -1,6 +1,8 @@
-package com.ceihtel.leetcode;
+package com.ceihtel.leetcode.easy;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,16 +11,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length - 1; i++) {
-            // System.out.println("Considering first number: " + i);
-            for (int j = i + 1; j < nums.length; j++) {
-                // System.out.println("Considering second number: " + j);
-                if (target == nums[i] + nums[j]) {
-                    return new int[]{i, j};
-                }
+        var map = new HashMap<Integer, Integer>();
+
+        for (var i = 0; i < nums.length; i++) {
+            if (!map.containsKey(target - nums[i])) {
+                map.put(nums[i], i);
+            } else {
+                return new int[]{map.get(target-nums[i]), i};
             }
         }
-        throw new IllegalStateException();
+
+        throw new RuntimeException("No solution found");
     }
 
     @Test
